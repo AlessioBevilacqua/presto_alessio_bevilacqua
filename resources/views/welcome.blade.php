@@ -1,5 +1,5 @@
 <x-layout>
-        <!-- Hero section -->
+    <!-- Hero section -->
     <header class="hero-section d-flex justify-content-center align-items-center text-center">
         <div class="hero-content">
             <h1 class="hero-title mb-4">Benvenuti su Presto.it</h1>
@@ -31,4 +31,26 @@
         </div>
     </section>
     <!-- Info section end -->
+    
+    <!-- Latest articles section -->
+    <section class="latest-articles py-5">
+        <div class="container text-center">
+            <h2 class="text-center mb-5">Ultimi Articoli</h2>
+            <div class="row height-custom justify-content-center align-items-center py-5">
+                @forelse ($articles as $article)
+                <div class="col-12 col-md-3 ">
+                    <x-card :article="$article" />
+                </div>
+                @empty
+                <div class="col-12">
+                    <h3 class="text-center">
+                        Non sono ancora stati creati articoli
+                    </h3>
+                </div>
+                @endforelse
+            </div>
+            <a class="btn btn-dark my-5" href="{{route('article.index')}}">Tutti gli articoli</a>
+        </div>
+    </section>
+    <!-- Latest articles section end -->
 </x-layout>

@@ -12,46 +12,57 @@
                     <a class="nav-link" aria-current="page" href="{{ route('homepage') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Annunci</a>
+                    <a class="nav-link" href="{{ route('article.index') }}">Articoli</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="">Chi Siamo</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categorie
+                    </a>
+                    <ul class="dropdown-menu">
+                        @foreach ($categories as $category)
+                        <li><a class="dropdown-item text-capitalize" href="{{ route('byCategory', $category) }}">{{ $category->name }}</a></li>
+                        @if (!$loop->last)
+                        <hr class="dropdown-divider">
+                        @endif
+                        @endforeach
+                    </ul>
                 </li>
+                
             </ul>
         </div>
-
+        
         <div class="d-flex navbar-nav d-none d-lg-block">
-           @auth
+            @auth
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    {{ Auth::user()->name }}
-                </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a class="dropdown-item" href="{{ route('create.article') }}">Crea Articolo</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
-                    </li>
-                    <form action="{{ route('logout') }}" id="form-logout" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </ul>
-            </li>
-            @else
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                Login
+                {{ Auth::user()->name }}
             </a>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
+                <li>
+                    <a class="dropdown-item" href="{{ route('create.article') }}">Crea Articolo</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
+                </li>
+                <form action="{{ route('logout') }}" id="form-logout" method="POST" class="d-none">
+                    @csrf
+                </form>
             </ul>
-            </li>
-            @endauth
-        </div>
-    </div>
+        </li>
+        @else
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Login
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
+        </ul>
+    </li>
+    @endauth
+</div>
+</div>
 </nav>

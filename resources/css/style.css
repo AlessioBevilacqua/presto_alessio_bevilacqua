@@ -16,6 +16,7 @@ body {
     font-weight: 400;
     font-style: normal;
     background-color: var(--pin);
+    border-top: 73px solid var(--pur);
 }
 
 /* Navbar */
@@ -51,7 +52,6 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
-    border-top: 73px solid var(--pur);
 }
 
 .hero-title{
@@ -204,8 +204,9 @@ body {
 }
 
 .cardImg{
-    margin-top: 10px;
+    margin: 5px 5px 0px 5px;
     border-radius: 20px;
+    border: 2px solid var(--pur);
 }
 
 
