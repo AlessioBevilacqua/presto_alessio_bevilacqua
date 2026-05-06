@@ -1,6 +1,10 @@
 <x-layout>
     <!-- Hero section -->
     <header class="hero-section d-flex justify-content-center align-items-center text-center">
+        <div class="position-absolute text-center">
+            <x-success-message />
+            <x-error-message />
+        </div>
         <div class="hero-content">
             <h1 class="hero-title mb-4">Benvenuti su Presto.it</h1>
             <a class="btn btn-secondary" href="{{route('create.article')}}">Crea Articolo</a>

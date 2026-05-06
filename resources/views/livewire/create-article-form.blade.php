@@ -1,9 +1,5 @@
 <form class="mt-5" wire:submit.prevent="store">
-    @if (session()->has('message'))
-    <div class="alert alert-success">
-        {{ session('message') }}
-    </div>
-    @endif
+    <x-success-message />
 
     <div class="mb-3">
         <label for="title" class="form-label">Titolo</label>

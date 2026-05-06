@@ -30,7 +30,7 @@ class CreateArticleForm extends Component
             'user_id' => Auth::id()
         ]);
         
-        session()->flash('message', 'Articolo creato con successo!');
+        session()->flash('successMessage', 'Articolo creato con successo!');
 
         $this->reset(['title', 'description', 'price', 'category']);
     }
