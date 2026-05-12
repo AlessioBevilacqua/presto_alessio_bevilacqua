@@ -2,7 +2,7 @@
     <div class="container-fluid my-5 vh-100">
         <div class="row height-custom justify-content-center align-items-center text-center">
             <div class="col-12">
-                <h1 class="display-1">Dashboard Revisore</h1>
+                <h1 class="display-1">{{ __('ui.revisor_dashboard') }}</h1>
             </div>
         </div>
 
@@ -33,12 +33,12 @@
                     <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
                         @csrf
                         @method('PATCH')
-                        <button class="btn btn-danger py-2 px-5 fw-bold">Rifiuta</button>
+                        <button class="btn btn-danger py-2 px-5 fw-bold">{{ __('ui.reject') }}</button>
                     </form>
                     <form action="{{ route('accept', ['article' => $article_to_check]) }}" method="POST">
                         @csrf
                         @method('PATCH')
-                        <button class="btn btn-success py-2 px-5 fw-bold">Accetta</button>
+                        <button class="btn btn-success py-2 px-5 fw-bold">{{ __('ui.accept') }}</button>
                     </form>
                 </div>
             </div>
@@ -47,9 +47,9 @@
         <div class="row justify-content-center align-items-center height-custom text-center">
             <div class="col-12 my-5">
                 <h3 class="text-center">
-                    Non ci sono articoli da revisionare
+                    {{ __('ui.no_articles_to_review') }}
                 </h3>
-                <a href="{{ route('homepage') }}" class="mt-5 btn btn-dark">Torna all'homepage</a>
+                <a href="{{ route('homepage') }}" class="mt-5 btn btn-dark">{{ __('ui.back_to_homepage') }}</a>
             </div>
         </div>
         @endif

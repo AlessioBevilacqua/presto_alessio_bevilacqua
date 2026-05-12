@@ -17,7 +17,7 @@ class CategoriesSeeder extends Seeder
         'Giocattoli',
         'Sport',
         'Animali domestici',
-        'Libiri e Riviste',
+        'Libri e Riviste',
         'Motori'
     ];
 

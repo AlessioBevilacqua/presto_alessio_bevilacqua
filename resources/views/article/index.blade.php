@@ -2,7 +2,7 @@
     <div class="container-fluid vh-100 my-5">
         <div class="row height-custom justify-content-center align-items-center text-center">
             <div class="col-12">
-                <h1 class="display-1">Tutti gli articoli</h1>
+                <h1 class="display-1">{{ __('ui.all_articles') }}</h1>
             </div>
         </div>
         <div class="row height-custom justify-content-center align-items-center py-5">
@@ -13,10 +13,9 @@
             @empty
             <div class="col-12 text-center">
                 <h3 class="text-center">
-                    Non sono ancora stati creati articoli
+                    {{ __('ui.no_articles') }}
                 </h3>
-                <a href="{{ route('create.article') }}" class="mt-5 btn btn-dark">Crea articolo</a>
-
+                <a href="{{ route('create.article') }}" class="mt-5 btn btn-dark">{{ __('ui.create_article') }}</a>
             </div>
             @endforelse
         </div>

@@ -3,24 +3,24 @@
         <a class="navbar-brand" href="#">
             <i class="fa-solid fa-dragon fa-2x"></i>
         </a>
-        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse d-lg-flex justify-content-center" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+        <div class="collapse navbar-collapse d-lg-flex justify-content-between" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ route('homepage') }}">Home</a>
+                    <a class="nav-link" aria-current="page" href="{{ route('homepage') }}">{{ __('ui.home') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('article.index') }}">Articoli</a>
+                    <a class="nav-link" href="{{ route('article.index') }}">{{ __('ui.articles') }}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Categorie
+                        {{ __('ui.categories') }}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         @foreach ($categories as $category)
-                        <li><a class="dropdown-item text-capitalize" href="{{ route('byCategory', $category) }}">{{ $category->name }}</a></li>
+                        <li><a class="dropdown-item text-capitalize" href="{{ route('byCategory', $category) }}">{{ __("ui.$category->name") }}</a></li>
                         @if (!$loop->last)
                         <hr class="dropdown-divider">
                         @endif
@@ -30,14 +30,31 @@
             </ul>
             <form class="d-flex" role="search" action="{{ route('article.search') }}" method="GET">
                 <div class="input-group">
-                    <input class="form-control me-2" type="search" placeholder="Cerca un articolo" aria-label="Search" name="query">
-                    <button class=" btn btn-outline-warning" type="submit">Cerca</button>
+                    <input class="form-control me-2" type="search" placeholder="{{ __('ui.search_placeholder') }}" aria-label="Search" name="query">
+                    <button class=" btn btn-outline-warning" type="submit">{{ __('ui.search') }}</button>
                 </div>
             </form>
+            <div class="nav-item dropdown ms-auto">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{{asset('vendor/blade-flags/country-'.app()->getLocale().'.svg')}}" width="32" height="32">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end text-center">
+                    <li>
+                        <x-_locale lang="it" />
+                    </li>
+                    <hr class="dropdown-divider">
+                    <li>
+                        <x-_locale lang="uk" />
+                    </li>
+                    <hr class="dropdown-divider">
+                    <li>
+                        <x-_locale lang="es" />
+                    </li>
+                </ul>
+            </div>
         </div>
-
         
-        <div class="d-flex navbar-nav d-none d-lg-block">
+        <div class="d-flex navbar-nav">
             @auth
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -51,23 +68,23 @@
                 @endif
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                        <a class="dropdown-item" href="{{ route('create.article') }}">Crea Articolo</a>
+                        <a class="dropdown-item" href="{{ route('create.article') }}">{{ __('ui.create_article') }}</a>
                     </li>
                     <hr class="dropdown-divider">
                     @if (Auth::user()->is_revisor)
                     <li>
                         <a class="dropdown-item" href="{{ route('revisor.index') }}">
                             @if (\App\Models\Article::toBeRevisedCount() > 0)
-                            {{ \App\Models\Article::toBeRevisedCount() }} Articoli da revisionare
+                            {{ \App\Models\Article::toBeRevisedCount() }} {{ __('ui.articles_to_review') }}
                             @else
-                            Dashboard Revisore
+                            {{ __('ui.revisor_dashboard') }}
                             @endif
                         </a>
                     </li>
                     <hr class="dropdown-divider">
                     @endif
                     <li>
-                        <a class="dropdown-item fw-bolder" href="{{ route('logout') }}" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
+                        <a class="dropdown-item fw-bolder" href="{{ route('logout') }}" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">{{ __('ui.logout') }}</a>
                     </li>
                     <form action="{{ route('logout') }}" id="form-logout" method="POST" class="d-none">
                         @csrf
@@ -76,14 +93,14 @@
             </li>
             @else
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link dropdown-toggle text-end" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                Login
+                <i class="fa-solid fa-circle-user"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
+                    <li><a class="dropdown-item" href="{{ route('login') }}">{{ __('ui.login') }}</a></li>
                     <hr class="dropdown-divider">
-                    <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
+                    <li><a class="dropdown-item" href="{{ route('register') }}">{{ __('ui.register') }}</a></li>
                 </ul>
             </li>
             @endauth
