@@ -7,13 +7,12 @@ use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 
-#[Signature('app:make-user-revisor {email}')]
-#[Description('Rende un utente revisore')]
+
 class MakeUserRevisor extends Command
 {
-    /**
-     * Execute the console command.
-     */
+    protected $signature = 'app:make-user-revisor {email}';
+    protected $description = 'Rende un utente revisore';
+    
     public function handle()
     {
         $user = User::where('email', $this->argument('email'))->first();

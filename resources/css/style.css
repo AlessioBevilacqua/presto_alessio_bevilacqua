@@ -316,3 +316,15 @@ body {
     justify-content: center;
     background-color: var(--yel);
 }
+
+.btn-outline-warning{
+    border: 2px solid var(--yel);
+    color: var(--yel);
+    transition: 0.3s;
+}
+
+.btn-outline-warning:hover{
+    background-color: var(--yel);
+    border: 2px solid var(--yel);
+    color: black;
+}

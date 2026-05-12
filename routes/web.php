@@ -15,3 +15,4 @@ Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('a
 Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
 Route::get('/request/revisor', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
 Route::get('/revisor/make/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+Route::get('/search/article', [ArticleController::class, 'searchArticles'])->name('article.search');

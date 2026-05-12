@@ -26,10 +26,16 @@
                         @endif
                         @endforeach
                     </ul>
-                </li>
-                
+                </li>  
             </ul>
+            <form class="d-flex" role="search" action="{{ route('article.search') }}" method="GET">
+                <div class="input-group">
+                    <input class="form-control me-2" type="search" placeholder="Cerca un articolo" aria-label="Search" name="query">
+                    <button class=" btn btn-outline-warning" type="submit">Cerca</button>
+                </div>
+            </form>
         </div>
+
         
         <div class="d-flex navbar-nav d-none d-lg-block">
             @auth
