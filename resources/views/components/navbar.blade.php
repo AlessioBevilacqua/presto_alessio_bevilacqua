@@ -3,10 +3,10 @@
         <a class="navbar-brand" href="#">
             <i class="fa-solid fa-dragon fa-2x"></i>
         </a>
-        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="toggle navigation">
+        <button class="navbar-toggler order-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse d-lg-flex justify-content-between" id="navbarNavDropdown">
+        <div class="collapse navbar-collapse d-lg-flex justify-content-between text-center order-3 order-lg-1" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ route('homepage') }}">{{ __('ui.home') }}</a>
@@ -34,8 +34,8 @@
                     <button class=" btn btn-outline-warning" type="submit">{{ __('ui.search') }}</button>
                 </div>
             </form>
-            <div class="nav-item dropdown ms-auto">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="nav-item dropdown ms-auto col-2 col-lg-1">
+                <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{asset('vendor/blade-flags/country-'.app()->getLocale().'.svg')}}" width="32" height="32">
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end text-center">
@@ -54,9 +54,9 @@
             </div>
         </div>
         
-        <div class="d-flex navbar-nav">
+        <div class="d-flex nav-item ms-auto mx-2 order-1">
             @auth
-            <li class="nav-item dropdown">
+            <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 {{ Auth::user()->name }}
@@ -90,9 +90,9 @@
                         @csrf
                     </form>
                 </ul>
-            </li>
+            </div>
             @else
-            <li class="nav-item dropdown">
+            <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-end" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 <i class="fa-solid fa-circle-user"></i>
@@ -102,7 +102,7 @@
                     <hr class="dropdown-divider">
                     <li><a class="dropdown-item" href="{{ route('register') }}">{{ __('ui.register') }}</a></li>
                 </ul>
-            </li>
+            </div>
             @endauth
         </div>
     </div>

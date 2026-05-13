@@ -59,5 +59,6 @@ return [
     'Sport' => 'Sport',
     'Animali domestici' => 'Animali domestici',
     'Libri e Riviste' => 'Libri e Riviste',
-    'Motori' => 'Motori'
+    'Motori' => 'Motori',
+    'photo_preview' => 'Anteprima foto'
 ];

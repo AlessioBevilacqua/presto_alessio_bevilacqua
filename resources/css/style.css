@@ -202,6 +202,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     cursor: pointer;
     transition: 0.3s;
+    height: 100%;
+    overflow: hidden;
 }
 
 .card:hover{
@@ -212,6 +214,11 @@ body {
     margin: 5px 5px 0px 5px;
     border-radius: 20px;
     border: 2px solid var(--pur);
+    width: 95%;
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+    background-color: white;
 }
 
 
@@ -327,4 +334,12 @@ body {
     background-color: var(--yel);
     border: 2px solid var(--yel);
     color: black;
+}
+
+.img-preview{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 120px;
 }

@@ -60,5 +60,6 @@ return [
     'Sport' => 'Sports',
     'Animali domestici' => 'Domestic Animals',
     'Libri e Riviste' => 'Books and Magazines',
-    'Motori' => 'Motors'
+    'Motori' => 'Motors',
+    'photo_preview' => 'Photo preview'
 ];

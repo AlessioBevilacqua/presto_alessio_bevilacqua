@@ -59,5 +59,6 @@ return [
     'Sport' => 'Deportes',
     'Animali domestici' => 'Animales domésticos',
     'Libri e Riviste' => 'Libros y Revistas',
-    'Motori' => 'Motores'
+    'Motori' => 'Motores',
+    'photo_preview' => 'Vista previa de la foto'
 ];
