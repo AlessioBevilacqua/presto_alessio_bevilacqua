@@ -1,48 +1,72 @@
 <x-layout>
-    <div class="container">
-        <div class="row height-custom justify-content-center align-items-center text-center">
+    <div class="container py-5">
+
+        {{-- Titolo --}}
+        <div class="row justify-content-center text-center mb-5">
             <div class="col-12">
-                <h1 class="display-4 my-5">{{ __('ui.article_detail') }}<br>{{ $article->title }}</h1>
+                <h1 class="display-4 fw-bold">
+                    {{ __('ui.article_detail') }}<br>{{ $article->title }}
+                </h1>
             </div>
         </div>
-        <div class="row vh-100 justify-content-center align-items-center"> 
-            <div class="col-12 col-md-4 mb-3 ">
-                @if ($article->images->count() > 0)
-                <div id="carouselExample" class="carousel slide ">
-                    <div class="carousel-inner">
-                        @foreach ($article->images as $key => $image)
-                        <div class="carousel-item @if ($loop->first) active @endif">
-                            <img src="{{ Storage::url($image->path) }}" class="d-block w-100 rounded shadow"
-                                alt="Immagine {{ $key + 1 }} dell'articolo {{ $article->title }}">
+
+        {{-- Contenuto --}}
+        <div class="row justify-content-center align-items-center g-5">
+
+            {{-- Carousel --}}
+            <div class="col-12 col-md-5">
+                <div class="shadow-lg carouselContainer overflow-hidden">
+                    @if ($article->images->count() > 0)
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner">
+                                @foreach ($article->images as $key => $image)
+                                    <div class="carousel-item @if ($loop->first) active @endif">
+                                        <img src="{{ $image->getUrl(300, 300) }}"
+                                             class="d-block w-100 carouselImg"
+                                             alt="Immagine {{ $key + 1 }} dell'articolo {{ $article->title }}">
+                                    </div>
+                                @endforeach
+                            </div>
+
+                            @if ($article->images->count() > 1)
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            @endif
                         </div>
-                        @endforeach
-                    </div>
-                    @if ($article->images->count() > 1)
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    @else
+                        <img src="https://picsum.photos/600/400" class="w-100 rounded" alt="Nessuna foto inserita">
                     @endif
                 </div>
-                @else
-                <img src="https://picsum.photos/300" alt="Nessuna foto inserita dall'utente">
-                @endif
             </div>
-    
-            <div class="col-12 col-md-4 mb-3 height-custom text-center">
-                <h2 class="display-5 fw-bold">{{ __('ui.title') }}: </span> {{ $article->title }}</h2>
-                <div class="d-flex flex-column justify-content-center h-75">
-                    <h4 class="fw-bold">{{ __('ui.price') }}: {{ $article->price }} €</h4>
-                    <h5>{{ __('ui.description') }}:</h5>
-                    <p>{{ $article->description }}</p>
+
+            {{-- Dettagli articolo --}}
+            <div class="col-12 col-md-5">
+                <div class="p-4 shadow bgCustom">
+
+                    <h2 class="fw-bold mb-3">{{ $article->title }}</h2>
+
+                    <h4 class=" fw-bold mb-4">
+                        {{ __('ui.price') }}: {{ $article->price }} €
+                    </h4>
+
+                    <h5 class="fw-semibold">{{ __('ui.description') }}</h5>
+                    <p class="text-muted">{{ $article->description }}</p>
+
+                    <hr>
+
+                    <div class="mt-4">
+                        <a href="{{ route('article.index') }}" class="btn btn-outline-dark px-4">
+                            {{ __('ui.all_articles') }}
+                        </a>
+                    </div>
+
                 </div>
             </div>
+
         </div>
     </div>
 </x-layout>

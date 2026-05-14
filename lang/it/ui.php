@@ -18,7 +18,7 @@ return [
     'previous' => 'Precedente',
     'next' => 'Successivo',
     'revisor_dashboard' => 'Dashboard Revisore',
-    'author' => 'Autore:',
+    'author' => 'Autore',
     'reject' => 'Rifiuta',
     'accept' => 'Accetta',
     'no_articles_to_review' => 'Non ci sono articoli da revisionare',
