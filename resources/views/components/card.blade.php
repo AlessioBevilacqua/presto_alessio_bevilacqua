@@ -1,5 +1,5 @@
 <div class="card mx-auto shadow text-center mb-3 h-100 d-flex flex-column justify-content-evenly align-items-center">
-    <img src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(600, 600) : 'https://picsum.photos/200' }}"
+    <img src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(800, 800) : 'https://picsum.photos/200' }}"
      class="card-img-top cardImg" alt="Immagine dell'articolo {{ $article->title }}">
 
     <div class="card-body d-flex flex-column">

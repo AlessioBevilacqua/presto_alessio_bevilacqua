@@ -7,7 +7,7 @@
         </div>
         <div class="hero-content">
             <h1 class="hero-title mb-4">{{ __('ui.welcome') }}</h1>
-            <a class="btn btn-secondary" href="{{route('create.article')}}">{{ __('ui.create_article') }}</a>
+            <a class="btn btn-dark my-3" href="{{route('create.article')}}">{{ __('ui.create_article') }}</a>
         </div>
     </header>
     <!-- Hero section end -->

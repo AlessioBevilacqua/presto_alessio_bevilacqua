@@ -9,7 +9,7 @@
         </div>
         <div class="row justify-content-center align-items-center height-custom ">
             <div class="col-12 col-md-6 ">
-                <form method="POST" action="{{ route('register') }}" class="bg-secondary-subtle shadow rounded p-5">
+                <form method="POST" action="{{ route('register') }}" class="shadow p-5 custom-form">
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">{{ __('ui.name') }}</label>

@@ -237,18 +237,44 @@ body {
 
 }
 .carouselContainer{
-    width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    height:auto;
     border: 2px solid var(--pur);
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: var(--yel);
+    padding: 5px;
 }
 
 .carouselImg{
-    height: 420px;
+    height: 600px;
     object-fit: contain;
     background-color: white;
+    border-radius: 20px;
+    border: 2px solid var(--pur);
 }
+
+.carousel-img-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-form{
+    background-color: var(--yel);
+    border: 2px solid var(--pur);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-control{
+    border: 2px solid var(--pur);
+    border-radius: 20px;
+}
+
 
 
 
