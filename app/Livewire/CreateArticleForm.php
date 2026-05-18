@@ -24,7 +24,7 @@ class CreateArticleForm extends Component
     #[Validate('required|numeric')]
     public $price;
     #[Validate('required')]
-    public $category;
+    public $category = '';
     public $images = [];
     public $temporary_images;
     public $article;

@@ -4,8 +4,10 @@ namespace App\Jobs;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
+use Spatie\Image\Enums\AlignPosition;
 use Spatie\Image\Enums\CropPosition;
 use Spatie\Image\Enums\Fit;
+use Spatie\Image\Enums\Unit;
 use Spatie\Image\Image;
 
 class ResizeImage implements ShouldQueue
@@ -38,6 +40,14 @@ class ResizeImage implements ShouldQueue
 
         Image::load($srcPath)
             ->crop($w, $h, CropPosition::Center)
+            ->watermark(base_path('public/img/watermark.png'),
+                width: 100,
+                height: 100,
+                paddingX: 5,
+                paddingY: 5,
+                paddingUnit: Unit::Percent
+            )
+
             ->save($destPath);
     }
 }
