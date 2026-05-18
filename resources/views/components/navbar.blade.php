@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top w-100">
     <div id="customNavbar"  class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ route('homepage') }}">
             <i class="fa-solid fa-dragon fa-2x"></i>
         </a>
         <button class="navbar-toggler order-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="toggle navigation">

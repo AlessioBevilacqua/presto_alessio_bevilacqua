@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid vh-100 my-5">
+    <div class="container-fluid my-5">
         <div class="row height-custom justify-content-center align-items-center text-center">
             <div class="col-12">
                 <h1 class="display-1">{{ __('ui.all_articles') }}</h1>
