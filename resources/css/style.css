@@ -394,14 +394,14 @@ body {
 }
 
 .btn-outline-primary{
-    border: 2px solid var(--pur);
+    border: 1px solid var(--pur);
     color: var(--pur);
     transition: 0.3s;
 }
 
 .btn-outline-primary:hover{
     background-color: var(--pur);
-    border: 2px solid var(--pur);
+    border: 1px solid var(--pur);
     color: white;
 }
 
@@ -415,4 +415,34 @@ body {
     background-repeat: no-repeat;
     width: 120px;
     height: 120px;
+}
+
+.miniImg{
+    border: 2px solid var(--pur);
+    border-radius: 20px;
+}
+
+.border-pur{
+    border-radius: 20px;
+    border-color: var(--pur) !important;
+}
+
+.bg-pin{
+    background-color: var(--pin);
+}
+
+.btn-yel{
+    background-color: var(--yel);
+    border: 1px solid var(--pur);
+    color: black;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+
+.btn-yel:hover{
+    background-color: var(--yel);
+    border: 1px solid var(--pur);
+    color: black;
+    transform: scale(1.1);
 }

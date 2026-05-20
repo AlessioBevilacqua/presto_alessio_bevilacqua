@@ -38,14 +38,15 @@
 
     @if (!empty($images))
         <div class="row mb-4">
-            <div class="col-12 border border-4 border-warning rounded shadow py-4">
+            <p class="text-center mb-4">{{ __('ui.photo_preview') }}</p>
+            <div class="col-12 border border-2 border-pur shadow py-4 bg-pin">
                 <div class="row">
                     @foreach ($images as $key => $image)
                         <div class="col d-flex flex-column align-items-center my-3">
-                            <div class="img-preview mx-auto shadow rounded"
+                            <div class="img-preview mx-auto shadow miniImg"
                                  style="background-image: url({{ $image->temporaryUrl() }});">
                             </div>
-                            <button type="button" class="btn btn-danger mt-5"
+                            <button type="button" class="btn btn-danger rounded-circle mt-5"
                                     wire:click="removeImage({{ $key }})">X</button>
                         </div>
                     @endforeach
@@ -56,14 +57,15 @@
 
     @if (!empty($existingImages))
         <div class="row mt-4 mb-4">
-            <div class="col-12 border border-4 border-primary rounded shadow py-4">
+            <p class="text-center mb-4">{{ __('ui.saved_photos') }}</p>
+            <div class="col-12 border border-2 border-pur shadow py-4 bg-pin">
                 <div class="row">
                     @foreach ($existingImages as $img)
                         <div class="col d-flex flex-column align-items-center my-3">
-                            <div class="img-preview mx-auto shadow rounded"
+                            <div class="img-preview mx-auto shadow miniImg"
                                  style="background-image: url({{ Storage::url($img['path']) }});">
                             </div>
-                            <button type="button" class="btn btn-danger mt-3"
+                            <button type="button" class="btn btn-danger rounded-circle mt-3"
                                     wire:click="removeExistingImage({{ $img['id'] }})">X</button>
                         </div>
                     @endforeach

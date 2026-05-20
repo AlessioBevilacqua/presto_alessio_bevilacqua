@@ -31,7 +31,7 @@
             <form class="d-flex" role="search" action="{{ route('article.search') }}" method="GET">
                 <div class="input-group">
                     <input class="form-control me-2" type="search" placeholder="{{ __('ui.search_placeholder') }}" aria-label="Search" name="query">
-                    <button class=" btn btn-outline-warning" type="submit">{{ __('ui.search') }}</button>
+                    <button class=" btn btn-outline-warning rounded-pill rounded-start-0" type="submit">{{ __('ui.search') }}</button>
                 </div>
             </form>
             <div class="nav-item dropdown ms-auto col-2 col-lg-1">

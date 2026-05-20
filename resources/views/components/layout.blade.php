@@ -33,8 +33,6 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/7612e640f7.js" crossorigin="anonymous"></script>
     
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     @livewireScripts
 </body>
 

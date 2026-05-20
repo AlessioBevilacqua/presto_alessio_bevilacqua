@@ -78,4 +78,5 @@ return [
     'article_accepted_successfully' => "Artículo ':name' aceptado con éxito!",
     'article_rejected_successfully' => "Artículo ':name' rechazado con éxito!",
     'saved_photos' => 'Fotos guardadas',
+    'reviews' => 'Reseñas',
 ];
