@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row py-5 justify-content-center align-items-center text-center">
             <div class="col-12 pt-5">
-                <h1 class="display-2">{{ __('ui.articles_in_category') }} <br> {{$category->name }}</h1>
+                <h1 class="display-2">{{ __('ui.articles_in_category') }} <br> {{ __("ui.$category->name") }}</h1>
             </div>
         </div>
         <div class="row height-custom justify-content-center align-items-center py-5">
