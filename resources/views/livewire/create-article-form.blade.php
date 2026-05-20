@@ -1,5 +1,4 @@
 <form class="mt-5 custom-form" wire:submit.prevent="store">
-    <x-success-message />
     
     <div class="mb-3">
         <label for="title" class="form-label">{{ __('ui.title') }}</label>
@@ -58,9 +57,10 @@
         </div>
     </div>
     @endif
-        
+    
     <div class="my-3 text-center">
         <button type="submit" class=" mt-3 btn btn-dark">{{ __('ui.create_article') }}</button>
     </div>
     
+    <x-success-message />
 </form>

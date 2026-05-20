@@ -62,6 +62,10 @@
                         <a href="{{ route('article.index') }}" class="btn btn-outline-dark px-4">
                             {{ __('ui.all_articles') }}
                         </a>
+                        @if (Auth::id() == $article->user->id)
+                            <a href="{{ route('edit.article', ['article' => $article]) }}" class="btn btn-outline-primary px-4"> {{ __('ui.edit') }}</a>
+                            <livewire:delete-article :article="$article" />
+                        @endif
                     </div>
 
                 </div>

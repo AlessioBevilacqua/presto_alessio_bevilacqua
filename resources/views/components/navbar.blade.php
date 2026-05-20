@@ -39,15 +39,13 @@
                     <img src="{{asset('vendor/blade-flags/country-'.app()->getLocale().'.svg')}}" width="32" height="32">
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end text-center">
-                    <li>
+                    <li class="dropdown-item mb-2">
                         <x-_locale lang="it" />
                     </li>
-                    <hr class="dropdown-divider">
-                    <li>
+                    <li class="dropdown-item mb-2">
                         <x-_locale lang="uk" />
                     </li>
-                    <hr class="dropdown-divider">
-                    <li>
+                    <li class="dropdown-item">
                         <x-_locale lang="es" />
                     </li>
                 </ul>

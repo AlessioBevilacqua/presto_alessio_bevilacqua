@@ -121,7 +121,7 @@
                     </h4>
                     
                     <h5 class="fst-italic text-muted mb-3">
-                        #{{ $article_to_check->category->name }}
+                        #{{ __('ui.' . $article_to_check->category->name) }}
                     </h5>
                     
                     <h5 class="fw-semibold">{{ __('ui.description') }}</h5>

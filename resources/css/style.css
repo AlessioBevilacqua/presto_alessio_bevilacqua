@@ -278,6 +278,8 @@ body {
 
 
 
+
+
 /* media queries */
 @media screen and (max-width: 560px) {
     .hero-title{
@@ -389,6 +391,22 @@ body {
     background-color: var(--yel);
     border: 2px solid var(--yel);
     color: black;
+}
+
+.btn-outline-primary{
+    border: 2px solid var(--pur);
+    color: var(--pur);
+    transition: 0.3s;
+}
+
+.btn-outline-primary:hover{
+    background-color: var(--pur);
+    border: 2px solid var(--pur);
+    color: white;
+}
+
+.btn{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .img-preview{

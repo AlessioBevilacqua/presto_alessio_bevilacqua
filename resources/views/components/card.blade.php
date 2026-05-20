@@ -9,6 +9,9 @@
         <div class="mt-auto my-3 d-flex justify-content-center align-items-center">
             <a href="{{ route('article.show', compact('article')) }}" class="btn mx-2 btn-primary">{{ __('ui.detail') }}</a>
             <a href="{{ route('byCategory', ['category' => $article->category]) }}" class="btn mx-2 btn-outline-info">{{ __("ui." . $article->category->name) }}</a>
+            @if (Auth::id() == $article->user->id)
+                <a href="{{ route('edit.article', ['article' => $article]) }}" class="btn mx-2 btn-warning">{{ __('ui.edit') }}</a>
+            @endif
         </div>
     </div>
 </div>

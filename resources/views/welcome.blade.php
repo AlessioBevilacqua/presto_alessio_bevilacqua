@@ -57,4 +57,25 @@
         </div>
     </section>
     <!-- Latest articles section end -->
+
+    <!-- Recensioni -->
+    <script>
+        const reviews = @json($reviews);
+    </script>
+
+    <section class="container my-5">
+        <div class="row text-center my-5">
+            <h2 class="display-6">{{ __('ui.reviews') }}</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper"></div>
+                    <div class="swiper-button-prev swiperBtn d-none d-lg-block"></div>
+                    <div class="swiper-button-next swiperBtn d-none d-lg-block"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- recnsioni end -->
 </x-layout>

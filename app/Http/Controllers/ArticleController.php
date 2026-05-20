@@ -20,6 +20,12 @@ class ArticleController extends Controller implements HasMiddleware
     {
         return view('article.create');
     }
+
+    public function edit(Article $article)
+    {
+        return view('article.edit', compact('article'));
+    }
+
     public function index()
     {
         $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(10);
