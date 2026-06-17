@@ -79,5 +79,5 @@ return [
     'article_accepted_successfully' => "Article ':name' accepted successfully!",
     'article_rejected_successfully' => "Article ':name' rejected successfully!",
     'saved_photos' => 'Saved photos',
-    'review' => 'Review',
+    'reviews' => 'Reviews',
 ];
